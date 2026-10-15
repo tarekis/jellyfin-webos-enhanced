@@ -1,16 +1,16 @@
 {
-    "appDescription": "A webOS client to connect to a Jellyfin Server instance and stream media.",
+    "appDescription": "Jellyfin for webOS with Seerr search and requests via the Jellyfin Enhanced plugin.",
     "icon": "assets/icon-80.png",
     "main": "index.html",
     "bgImage": "assets/splash.png",
-    "title": "Jellyfin",
+    "title": "Jellyfin + Seerr",
     "type": "web",
-    "version": "1.2.2",
+    "version": "1.3.0",
     "splashBackground": "assets/splash.png",
     "bgColor": "#000b25",
-    "vendor": "Jellyfin Project",
+    "vendor": "Clemens Himmer (fork of Jellyfin for webOS)",
     "largeIcon": "assets/icon-130.png",
     "iconColor": "#000b25",
-    "id": "org.jellyfin.webos",
+    "id": "org.himmer.jellyfin.seerr",
     "disableBackHistoryAPI": true
 }

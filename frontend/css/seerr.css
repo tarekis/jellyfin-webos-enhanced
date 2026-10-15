@@ -1,0 +1,365 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * Styles for js/seerr.js. Sized in vh so it reads the same on 720p and
+ * 1080p web views. No CSS variables: webOS 3.x is Chromium 38.
+*/
+
+#seerr-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100000;
+    background: rgba(8, 12, 24, 0.97);
+    color: #fff;
+    font-family: inherit;
+    font-size: 2.6vh;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    padding: 3vh 4vw;
+    box-sizing: border-box;
+}
+
+#seerr-overlay.seerr-open {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.seerr-overlay-active body {
+    overflow: hidden;
+}
+
+.seerr-header {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+}
+
+.seerr-logo {
+    font-size: 4vh;
+    font-weight: bold;
+    color: #a78bfa;
+    margin-right: 2vw;
+}
+
+.seerr-input {
+    -webkit-flex: 1;
+    flex: 1;
+    font-size: 3vh;
+    padding: 1.2vh 1.2vw;
+    border: 0.4vh solid #555;
+    border-radius: 0.8vh;
+    background: #1c2233;
+    color: #fff;
+    outline: none;
+}
+
+.seerr-input:focus {
+    border-color: #a78bfa;
+}
+
+.seerr-button {
+    font-size: 2.6vh;
+    padding: 1.2vh 2vw;
+    margin-left: 1.2vw;
+    border: 0.4vh solid transparent;
+    border-radius: 0.8vh;
+    background: #4c3d8f;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+.seerr-button-secondary {
+    background: #2c3245;
+}
+
+.seerr-button-primary {
+    background: #6d28d9;
+    font-weight: bold;
+}
+
+.seerr-button:focus {
+    border-color: #fff;
+    background: #a78bfa;
+    color: #10131c;
+    -webkit-transform: scale(1.06);
+    transform: scale(1.06);
+}
+
+.seerr-button[disabled] {
+    opacity: 0.6;
+}
+
+.seerr-message {
+    margin: 2vh 0 1vh;
+    min-height: 3vh;
+    color: #c8cbd6;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+}
+
+.seerr-message-error {
+    color: #ff8a8a;
+}
+
+.seerr-grid {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+    padding: 1vh 0.5vw;
+}
+
+.seerr-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.seerr-card {
+    width: 13vw;
+    margin: 0 1.2vw 3vh 0;
+    padding: 0.6vh;
+    border: 0.5vh solid transparent;
+    border-radius: 1vh;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: -webkit-transform 0.12s;
+    transition: transform 0.12s;
+}
+
+.seerr-card:focus {
+    border-color: #a78bfa;
+    background: #232a40;
+    -webkit-transform: scale(1.06);
+    transform: scale(1.06);
+}
+
+.seerr-poster {
+    position: relative;
+    width: 100%;
+    height: 19.5vw;
+    border-radius: 0.6vh;
+    overflow: hidden;
+    background: #1c2233;
+}
+
+.seerr-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.seerr-poster-empty {
+    padding: 6vh 1vw 2vh;
+    color: #888;
+    text-align: center;
+}
+
+.seerr-badge {
+    position: absolute;
+    left: 0.6vh;
+    top: 0.6vh;
+    padding: 0.3vh 0.6vw;
+    border-radius: 0.5vh;
+    font-size: 1.9vh;
+    font-weight: bold;
+    background: #444;
+    color: #fff;
+}
+
+.seerr-badge-missing {
+    background: #6d28d9;
+}
+
+.seerr-badge-pending {
+    background: #b45309;
+}
+
+.seerr-badge-processing {
+    background: #2563eb;
+}
+
+.seerr-badge-partial {
+    background: #0d9488;
+}
+
+.seerr-badge-available {
+    background: #15803d;
+}
+
+.seerr-badge-blocked {
+    background: #991b1b;
+}
+
+.seerr-card-title {
+    margin-top: 1vh;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.seerr-card-meta {
+    color: #9aa0b4;
+    font-size: 2.2vh;
+}
+
+.seerr-hint {
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    padding-top: 1vh;
+    color: #8088a0;
+    font-size: 2.1vh;
+    text-align: center;
+}
+
+.seerr-dialog {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.seerr-dialog-open {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.seerr-dialog-box {
+    display: -webkit-flex;
+    display: flex;
+    width: 70vw;
+    max-height: 80vh;
+    padding: 3vh 2.5vw;
+    border-radius: 1.2vh;
+    background: #161b2b;
+    box-shadow: 0 1vh 5vh rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+}
+
+.seerr-dialog-poster {
+    width: 18vw;
+    height: 27vw;
+    max-height: 72vh;
+    object-fit: cover;
+    border-radius: 0.8vh;
+    margin-right: 2.5vw;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+}
+
+.seerr-dialog-body {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex: 1;
+    flex: 1;
+    min-width: 0;
+}
+
+.seerr-dialog-title {
+    font-size: 4.2vh;
+    font-weight: bold;
+}
+
+.seerr-dialog-meta {
+    margin: 1vh 0 2vh;
+    color: #a78bfa;
+}
+
+.seerr-dialog-overview {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: hidden;
+    line-height: 1.4;
+    color: #d6d9e3;
+    display: -webkit-box;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical;
+}
+
+.seerr-dialog-actions {
+    margin-top: 3vh;
+}
+
+.seerr-dialog-actions .seerr-button {
+    margin-left: 0;
+    margin-right: 1.5vw;
+    font-size: 3vh;
+}
+
+#seerr-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 6vh;
+    z-index: 100001;
+    max-width: 70vw;
+    padding: 2vh 2.5vw;
+    border-radius: 1vh;
+    background: #15803d;
+    color: #fff;
+    font-size: 2.8vh;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+}
+
+#seerr-toast.seerr-toast-error {
+    background: #b91c1c;
+}
+
+#seerr-toast.seerr-toast-show {
+    opacity: 1;
+}
+
+/* Banner on Jellyfin's own search page */
+.seerr-search-banner {
+    display: block;
+    width: auto;
+    margin: 1.5em 3.3% 0.5em;
+    padding: 0.8em 1.2em;
+    border: 0.2em solid transparent;
+    border-radius: 0.3em;
+    background: #4c3d8f;
+    color: #fff;
+    font-size: 1.1em;
+    text-align: left;
+    cursor: pointer;
+}
+
+.seerr-search-banner:focus {
+    border-color: #fff;
+    background: #a78bfa;
+    color: #10131c;
+}
+
+.seerr-search-banner-hint {
+    margin-left: 1em;
+    opacity: 0.75;
+    font-size: 0.85em;
+}

@@ -14,10 +14,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Use Node.js 14.x
+      - name: Use Node.js 22.x
         uses: actions/setup-node@v6
         with:
-          node-version: 14.x
+          node-version: 22.x
 
       - name: Prepare environment
         run: |
@@ -25,7 +25,7 @@ jobs:
           mkdir ./build
 
       - name: Install ares-cli globally
-        run: npm install -g @webosose/ares-cli
+        run: npm install -g @webos-tools/cli
 
       - name: Check packaging
         run: ares-package --check
@@ -34,7 +34,7 @@ jobs:
         run: ares-package --no-minify --outdir build/ services frontend
 
       - name: Create manifest for distribution
-        run: node tools/gen-manifest.js build/org.jellyfin.webos.manifest.json
+        run: node tools/gen-manifest.js build/org.himmer.jellyfin.seerr.manifest.json
 
       - name: Upload CI artifacts
         uses: actions/upload-artifact@v5

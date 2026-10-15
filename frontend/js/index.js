@@ -421,7 +421,7 @@ function loadUrl(url, success, failure) {
 function getTextToInject(success, failure) {
     var bundle = {};
 
-    var urls = ['js/webOS.js', 'css/webOS.css'];
+    var urls = ['js/webOS.js', 'css/webOS.css', 'js/seerr.js', 'css/seerr.css'];
 
     // imitate promises as they're borked in at least WebOS 2
     var looper = function (idx) {
@@ -627,7 +627,7 @@ function startDiscovery() {
         return;
     }
     console.log("Starting server autodiscovery...");
-    discover = webOS.service.request("luna://org.jellyfin.webos.service", {
+    discover = webOS.service.request("luna://org.himmer.jellyfin.seerr.service", {
         method: "discover",
         parameters: {
             uniqueToken: 'fooo'

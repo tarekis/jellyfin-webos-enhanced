@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jellyfin-web fixture</title>
+<link rel="stylesheet" href="/frontend/css/seerr.css">
+</head>
+<body>
+<div class="page">
+    <div class="searchFields"><input id="searchTextInput" type="search"></div>
+    <div class="searchResults"></div>
+</div>
+<script>
+    window.ApiClient = {
+        accessToken: function () { return 'tok123'; },
+        getUrl: function (n) { return location.origin + '/' + n.replace(/^\//, ''); }
+    };
+    location.hash = '#/search';
+    window.__keyCount = 0;
+    document.addEventListener('keydown', function () { window.__keyCount++; });
+</script>
+<script src="/frontend/js/seerr.js"></script>
+</body>
+</html>
