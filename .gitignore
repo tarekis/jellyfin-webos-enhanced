@@ -31,3 +31,4 @@ build/
 yarn.lock
 test-results/
 playwright-report/
+dist/
